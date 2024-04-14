@@ -90,8 +90,8 @@ P.S. You can delete this when you're done too. It's your config now! :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+-- Set to true if you have a Nerd Font installed
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -436,6 +436,25 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+
+      -- Some older keymap remaps
+
+      -- Window resize with arrows
+      vim.keymap.set('n', '<C-Up>', ':resize -2 <CR>')
+      vim.keymap.set('n', '<C-Down>', ':resize +2 <CR>')
+      vim.keymap.set('n', '<C-Left>', ':vertical resize -2 <CR>')
+      vim.keymap.set('n', '<C-Right>', ':vertical resize +2 <CR>')
+
+      vim.keymap.set('n', '<C-s>', ':w <CR>')
+
+      vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+      vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+      vim.keymap.set('n', 'J', 'mzJ`z')
+      vim.keymap.set('n', '<C-d>', '<C-d>zz')
+      vim.keymap.set('n', '<C-u>', '<C-u>zz')
+      vim.keymap.set('n', 'n', 'nzzzv')
+      vim.keymap.set('n', 'N', 'Nzzzv')
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
