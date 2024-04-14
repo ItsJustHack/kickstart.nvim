@@ -118,6 +118,9 @@ vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
+-- Enable relative number lines
+vim.opt.relativenumber = true
+
 -- Enable break indent
 vim.o.breakindent = true
 
