@@ -115,6 +115,9 @@ vim.opt.showmode = false
 --  See `:help 'clipboard'`
 vim.opt.clipboard = 'unnamedplus'
 
+-- Enable relative number lines
+vim.opt.relativenumber = true
+
 -- Enable break indent
 vim.opt.breakindent = true
 
